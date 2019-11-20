@@ -1,0 +1,11 @@
+server:
+  port: 8085
+  
+spring:
+  data:
+    cassandra:
+      keyspace-name: testcassandra
+      contact-points: localhost,127.0.0.1
+      port: 9042
+      schema-action: create-if-not-exists
+    

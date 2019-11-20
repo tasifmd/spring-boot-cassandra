@@ -1,4 +1,4 @@
-package com.tasif.springcassandra.springcassandra;
+package com.tasif.springcassandra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
