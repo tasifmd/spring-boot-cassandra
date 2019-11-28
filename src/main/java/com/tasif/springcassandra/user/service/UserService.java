@@ -22,7 +22,7 @@ public class UserService {
 
 	public String createUser(UserDto createUser) {
 		User user = modelmapper.map(createUser, User.class);
-		String userId = UUID.randomUUID().toString();
+		String userId = UUID.randomUUID().toString().replaceAll("-", "");
 		user.setUserId(userId);
 		userRepository.save(user);
 		return "User created successfully";

@@ -26,7 +26,7 @@ public class VehicleService {
 
 	public String createVehicle(VehicleDto createVehicle) {
 		Vehicle vehicle = modelmapper.map(createVehicle, Vehicle.class);
-		String vehicleId = UUID.randomUUID().toString();
+		String vehicleId = UUID.randomUUID().toString().replaceAll("-", "");
 		vehicle.setVehicleId(vehicleId);
 		vehicleRepository.save(vehicle);
 		return "Vehicle created successfully";
