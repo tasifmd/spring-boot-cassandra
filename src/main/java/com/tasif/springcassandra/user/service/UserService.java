@@ -24,7 +24,7 @@ public class UserService {
 		User user = modelmapper.map(createUser, User.class);
 		String userId = UUID.randomUUID().toString().replaceAll("-", "");
 		user.setUserId(userId);
-		userRepository.save(user);
+		userRepository.save(user); 
 		return "User created successfully";
 	}
 
