@@ -11,7 +11,7 @@ import com.tasif.springcassandra.user.dto.VehicleDto;
 import com.tasif.springcassandra.user.service.VehicleService;
 
 @RestController
-@RequestMapping("vehicle")
+@RequestMapping("/vehicle")
 public class VehicleController {
 
 	@Autowired
