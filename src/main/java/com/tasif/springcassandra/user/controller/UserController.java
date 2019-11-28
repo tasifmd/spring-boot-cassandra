@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tasif.springcassandra.user.dto.UserDto;
 import com.tasif.springcassandra.user.model.User;
 import com.tasif.springcassandra.user.service.UserService;
 
@@ -23,7 +24,7 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping
-	public String create(@RequestBody User user) {
+	public String create(@RequestBody UserDto user) {
 		String response = userService.createUser(user);
 		return response;
 	}
@@ -35,19 +36,19 @@ public class UserController {
 	}
 
 	@GetMapping("/{userId}")
-	public User getUser(@PathVariable int userId) {
+	public User getUser(@PathVariable String userId) {
 		User user = userService.getUser(userId);
 		return user;
 	}
 
 	@PutMapping("/{userId}")
-	public String update(@PathVariable int userId,@RequestBody User user) {
+	public String update(@PathVariable String userId,@RequestBody UserDto user) {
 		String response = userService.updateUser(userId,user);
 		return response;
 	}
 	
 	@DeleteMapping("/{userId}")
-	public String delete(@PathVariable int userId) {
+	public String delete(@PathVariable String userId) {
 		String response = userService.deleteUser(userId);
 		return response;
 	}
